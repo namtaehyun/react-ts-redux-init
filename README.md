@@ -1,0 +1,70 @@
+# LMS 교직원 - Frontend
+
+  <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
+<img src="https://img.shields.io/badge/Type Script-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
+  <img src="https://img.shields.io/badge/Redux Toolkit-764ABC?style=for-the-badge&logo=Redux&logoColor=white">
+
+## Table of Contents
+
+-   [Installation](#installation)
+-   [Environment](#Environment)
+-   [Getting Started](#getting-started)
+-   [Structure overview](#structure-overview)
+
+## Installation
+
+```sh
+# Yarn
+yarn install
+```
+
+## Environment
+
+env 파일 생성 or 수정
+
+```sh
+# .env.development
+REACT_APP_BASE_URL=http://diabetes.locslab.com
+REACT_APP_API_URL=$REACT_APP_BASE_URL/api
+
+# .env.production
+REACT_APP_BASE_URL=http://diabetes.locslab.com
+REACT_APP_API_URL=$REACT_APP_BASE_URL/api
+```
+
+## Getting Started
+
+```sh
+# Yarn
+yarn start
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Structure overview
+
+```
+src
+├── apis
+├── components              // 공통 컴포넌트
+├── css                     // 기존 인제대 LMS css
+├── features                // 각각 View, Component,Logic
+│   ├── dashboard.tsx       // 대시보드 View
+│   ├── dashboardSlice.ts   // 대시보드 상태 관리(Logic)
+│   └── components
+│       └── notice.tsx      // 공지사항 컴포넌트
+├── requests
+│   ├── authRequest.ts      // jwt setting api config
+│   └── request.ts          // nomal api config
+├── services
+│   └── authService.ts      // 인증 서비스
+├── utiles                  // 유틸리티 함수
+├── vendor                  // 기존 인제대 LMS 사용 라이브러리
+├── routes.tsx              // 페이지 라우팅
+├── .eslintrc               // eslint 설정
+├── .prettierrc             // prettier 설정
+├── package.json            // 패키지 관리
+├── .env.development        // 개발서버 설정
+├── .env.production         // 운영서버 설정
+└── yarn.lock
+```
