@@ -6,7 +6,7 @@
 
 ## Table of Contents
 
--   [Environment](#nvironment)
+-   [Environment](#environment)
 -   [Getting Started](#getting-started)
 -   [Structure overview](#structure-overview)
 
