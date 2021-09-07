@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect, RouteProps } from 'react-router-dom';
-import {
-    DashBoard
-} from 'features';
+import { DashBoard } from 'features';
 import AuthLayout from 'components/layouts/authLayout';
 import AuthService from 'services/authService';
 import CallBackPage from 'utiles/callBackPage';
@@ -25,7 +23,7 @@ const AuthRoute = ({ component: Component, location, ...rest }: RouteProps) => {
             AuthService.refreshToken({ refreshToken }); // 재발행
         } else {
             alert('로그인이 만료되었습니다.');
-            localStorage.setItem('location', location ? location.pathname : '/');
+            // localStorage.setItem('location', location ? location.pathname : '/');        // 기존 경로 저장
             AuthService.removeToken();
         }
     }
@@ -67,7 +65,7 @@ const Routes: React.FC = () => {
             <Switch>
                 <AuthRoute path="/dashboard" component={DashBoard} />
                 <Route path="/callback" component={CallBackPage} />
-                {/* <Redirect path="/" to="/dashboard" /> */}
+                <Redirect path="/" to="/dashboard" />
             </Switch>
         </Router>
     );

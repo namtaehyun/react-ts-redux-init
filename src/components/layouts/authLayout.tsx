@@ -33,9 +33,7 @@ const AuthLayout = ({ children }: ILayoutProps): JSX.Element => {
             >
                 {modalChildren}
             </BasicModal>
-            <div>
-                {children}
-            </div>
+            <div>{children}</div>
         </>
     );
 };

@@ -20,21 +20,22 @@ const CallBackPage = (): JSX.Element => {
         const redirectQueryString = async (queryStr: IOAuthRedirectParams) => {
             const { code, state, error } = queryStr;
 
-                const res: IApiPostTokenResponse = await apiPostToken({
-                    code,
-                    redirectUri: process.env.REACT_APP_REDIRECT_URL,
-                });
+            // JWT 토큰 발급
+            const res: IApiPostTokenResponse = await apiPostToken({
+                code,
+                redirectUri: process.env.REACT_APP_REDIRECT_URL,
+            });
 
-                const { access_token, refresh_token, user_id, user_name } = res;
+            const { access_token, refresh_token, user_id, user_name } = res;
 
-                AuthService.setAccessToken(access_token);
-                AuthService.setRefreshToken(refresh_token);
+            AuthService.setAccessToken(access_token);
+            AuthService.setRefreshToken(refresh_token);
 
-                const { authorities } = AuthService.getProfile();
+            const { authorities } = AuthService.getProfile();
 
-                dispatch(setUser({ id: user_id, username: user_name, authorities }));
+            dispatch(setUser({ id: user_id, username: user_name, authorities }));
 
-                history.replace(location ? location : '/');
+            history.replace(location ? location : '/');
         };
 
         redirectQueryString(qs.parse(window.location.search));
