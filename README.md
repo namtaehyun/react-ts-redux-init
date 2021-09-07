@@ -1,12 +1,12 @@
 # React Typescript Redux-Toolkit JWT starter
 
-  <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
-<img src="https://img.shields.io/badge/Type Script-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
-  <img src="https://img.shields.io/badge/Redux Toolkit-764ABC?style=for-the-badge&logo=Redux&logoColor=white">
+바로 사용 할 수 있는 템플릿은 아니며, 코드만 참고 바랍니다.
+
+  <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/Type Script-3178C6?style=for-the-badge&logo=typescript&logoColor=white"> <img src="https://img.shields.io/badge/Redux Toolkit-764ABC?style=for-the-badge&logo=Redux&logoColor=white">
 
 ## Table of Contents
 
--   [Environment](#Environment)
+-   [Environment](#nvironment)
 -   [Getting Started](#getting-started)
 -   [Structure overview](#structure-overview)
 
@@ -25,6 +25,10 @@ REACT_APP_API_URL=$REACT_APP_BASE_URL/api
 ```
 
 ## Getting Started
+
+1. /src/features에 필요한 View를 생성
+2. /src/routes.tsx에서 라우팅
+3. JWT기반 로그인 후 사용하는 페이지는 AuthRoute에서 처리
 
 ```sh
 # Yarn
