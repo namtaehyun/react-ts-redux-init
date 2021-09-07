@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect, RouteProps } from 'react-router-dom';
-import { DashBoard } from 'features';
+// import { DashBoard } from 'features';
 import AuthLayout from 'components/layouts/authLayout';
 import AuthService from 'services/authService';
 import CallBackPage from 'utiles/callBackPage';
@@ -63,9 +63,10 @@ const Routes: React.FC = () => {
     return (
         <Router>
             <Switch>
-                <AuthRoute path="/dashboard" component={DashBoard} />
-                <Route path="/callback" component={CallBackPage} />
-                <Redirect path="/" to="/dashboard" />
+                {/* features에 페이지를 추가 후 사용해야 됨 */}
+                {/* <AuthRoute path="/dashboard" component={DashBoard} /> */}
+                {/* <Route path="/callback" component={CallBackPage} /> */}
+                {/* <Redirect path="/" to="/dashboard" /> */}
             </Switch>
         </Router>
     );
